@@ -1,14 +1,29 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Facebook login
+      Account login
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
- <button ion-button full (click)="logInWithFB()">Login</button>
-<ion-card *ngIf="userData">
+    <ion-list>
+        <ion-item>
+          <ion-label color="primary">Email or Username</ion-label>
+          <ion-input placeholder="username"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label color="primary" fixed>Password</ion-label>
+          <ion-input placeholder="password"></ion-input>
+        </ion-item>
+    </ion-list>
+  <button ion-button full color="green">Log in</button>
+  <p style="text-align:center"> Or</p>
+ <button ion-button full (click)="logInWithFB()"><ion-icon name="logo-facebook" ></ion-icon>&nbsp;Login with Facebook</button><br>
+ <button ion-button full color="light" ><ion-icon name="logo-google" ></ion-icon>&nbsp;Login with Google</button>
+
+ <ion-card *ngIf="userData">
   <ion-card-header>{{userData.username}}</ion-card-header>
 </ion-card>
 </ion-content>
